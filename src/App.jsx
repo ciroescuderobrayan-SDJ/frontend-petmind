@@ -4,7 +4,7 @@ function App() {
 
   return (
     <>
-      // work in progress
+      {/* work in progress */}
     </>
   )
 }

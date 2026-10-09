@@ -603,3 +603,13 @@ button.chip:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
