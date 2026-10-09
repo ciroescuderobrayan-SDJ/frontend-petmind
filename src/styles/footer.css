@@ -1,0 +1,110 @@
+.site-footer {
+  padding: 0.75rem 0;
+}
+
+.footer-banner {
+  position: relative;
+  display: flex;
+  min-height: 8.75rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-soft);
+}
+
+.footer-pets {
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  z-index: 1;
+  width: min(19rem, 27%);
+  max-height: 9.5rem;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.footer-decoration {
+  position: absolute;
+  bottom: 0;
+  width: 5.5rem;
+  opacity: 0.55;
+}
+
+.footer-decoration-left {
+  left: 1.5rem;
+}
+
+.footer-decoration-right {
+  right: 1.5rem;
+}
+
+.footer-heart {
+  width: 2.4rem;
+  margin-right: 1.5rem;
+}
+
+.footer-message {
+  position: relative;
+  z-index: 1;
+  max-width: 43rem;
+  text-align: center;
+}
+
+.footer-message p {
+  margin-bottom: 0.4rem;
+  color: var(--color-primary);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.footer-message h2 {
+  margin-bottom: 0.35rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  letter-spacing: -0.04em;
+}
+
+.footer-message span {
+  color: var(--color-text-muted);
+  font-size: clamp(0.7rem, 1.4vw, 0.9rem);
+}
+
+@media (max-width: 700px) {
+  .footer-banner {
+    min-height: 12rem;
+    padding: 2rem 1.25rem 1.5rem;
+  }
+
+  .footer-pets {
+    left: 1rem;
+    width: 9rem;
+    opacity: 0.75;
+  }
+
+  .footer-decoration {
+    width: 3.5rem;
+  }
+
+  .footer-decoration-left {
+    left: 0.25rem;
+  }
+
+  .footer-decoration-right {
+    right: 0.25rem;
+  }
+
+  .footer-heart {
+    position: absolute;
+    top: 1.25rem;
+    left: 50%;
+    width: 1.7rem;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .footer-message {
+    align-self: flex-start;
+    padding-inline: 2rem;
+  }
+}
