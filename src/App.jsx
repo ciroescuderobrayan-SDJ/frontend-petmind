@@ -1,10 +1,11 @@
 import './styles/global.css'
-
+import Footer from './components/Footer'
 function App() {
 
   return (
     <>
-      // work in progress
+    <Footer />
+      {/* work in progress */}
     </>
   )
 }
