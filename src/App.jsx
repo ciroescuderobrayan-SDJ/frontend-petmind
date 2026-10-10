@@ -1,12 +1,11 @@
-import './styles/global.css'
-import Footer from './components/Footer'
-function App() {
+import { ThemeProvider } from './context/ThemeProvider'
+import AppRoutes from './routes/routes'
 
+function App() {
   return (
-    <>
-    <Footer />
-      {/* work in progress */}
-    </>
+    <ThemeProvider>
+      <AppRoutes />
+    </ThemeProvider>
   )
 }
 
