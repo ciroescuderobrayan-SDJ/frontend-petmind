@@ -8,8 +8,8 @@
 
 .auth-header {
     display: flex;
-    justify-content: center;
-    padding: 1.5rem 1rem;
+    justify-content: flex-start;
+    padding: 1.5rem 2rem;
 }
 
 .auth-brand {
