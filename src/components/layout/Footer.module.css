@@ -1,0 +1,124 @@
+.footer {
+  margin-top: auto;
+  color: var(--color-footer-text);
+  background: var(--color-footer-bg);
+}
+
+.top {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 0.7fr) minmax(0, 1.3fr) minmax(0, 1.75fr);
+  gap: 2.5rem;
+  padding-block: 3.5rem 3rem;
+}
+
+.brand p {
+  max-width: 22rem;
+  margin-top: 1.25rem;
+  color: var(--color-footer-text);
+  font-size: 0.98rem;
+}
+
+.column h2,
+.newsletter h2 {
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+
+.column ul {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.column a {
+  color: var(--color-footer-text);
+  font-size: 0.98rem;
+}
+
+.column a:hover {
+  color: #ffffff;
+}
+
+.newsletter p {
+  color: var(--color-footer-text);
+  font-size: 0.95rem;
+}
+
+.newsletterRow {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.input {
+  min-width: 0;
+  height: 3.1rem;
+  flex: 1;
+  border: 1px solid var(--color-footer-border);
+  border-radius: 12px;
+  padding: 0 1rem;
+  color: #ffffff;
+  background: var(--color-footer-surface);
+  outline: none;
+}
+
+.input::placeholder {
+  color: #88aaa5;
+}
+
+.input:focus {
+  border-color: #48b8aa;
+}
+
+.newsletterRow :global(.btn) {
+  min-height: 3.1rem;
+  box-shadow: none;
+}
+
+.error {
+  display: block;
+  margin-top: 0.5rem;
+  color: #ffb4a3;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.bottom {
+  border-top: 1px solid var(--color-footer-border);
+}
+
+.bottomRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding-block: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.legal a {
+  color: var(--color-footer-text);
+}
+
+.legal a:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 1080px) {
+  .top {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .top {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .newsletterRow {
+    flex-direction: column;
+  }
+}

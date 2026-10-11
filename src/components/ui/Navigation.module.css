@@ -1,0 +1,302 @@
+/* ---------- Breadcrumbs ---------- */
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.breadcrumbs a:hover {
+  color: var(--color-primary);
+}
+
+.breadcrumbs [aria-current='page'] {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.separator {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.breadcrumbsLight ol,
+.breadcrumbsLight [aria-current='page'] {
+  color: rgb(255 255 255 / 92%);
+}
+
+.breadcrumbsLight a:hover {
+  color: #ffffff;
+}
+
+/* ---------- Tabs ---------- */
+.tabs {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.tab {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 0.5rem;
+  border: 0;
+  color: var(--color-text-muted);
+  background: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tabIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.tabCount {
+  display: inline-grid;
+  min-width: 1.45rem;
+  height: 1.45rem;
+  place-items: center;
+  border-radius: var(--radius-pill);
+  padding-inline: 0.35rem;
+  color: var(--color-text-muted);
+  background: var(--color-surface-sunken);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.underline {
+  gap: 2rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.underline .tab {
+  position: relative;
+  padding: 0.85rem 0.35rem;
+}
+
+.underline .tab:hover {
+  color: var(--color-heading);
+}
+
+.underline .tabActive {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.underline .tabActive::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  content: '';
+  background: var(--color-primary);
+}
+
+.underline .tabActive .tabCount {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.pills {
+  display: inline-flex;
+  max-width: 100%;
+  gap: 0.25rem;
+  border-radius: 14px;
+  padding: 0.3rem;
+  background: var(--color-surface-sunken);
+}
+
+.pills .tab {
+  min-height: 2.6rem;
+  border-radius: 11px;
+  padding: 0.45rem 1.1rem;
+}
+
+.pills .tab:hover {
+  color: var(--color-heading);
+}
+
+.pills .tabActive {
+  color: var(--color-heading);
+  background: var(--color-surface);
+  box-shadow: 0 1px 3px rgb(16 32 31 / 10%);
+  font-weight: 700;
+}
+
+.pills .tabActive .tabCount {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+/* ---------- Accordion ---------- */
+.accordion {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-surface);
+  transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.accordionOpen {
+  border-color: var(--color-primary-soft);
+  background: var(--color-primary-softer);
+}
+
+.accordionButton {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 0;
+  padding: 1.25rem 1.5rem;
+  color: var(--color-heading);
+  background: none;
+  font-size: 1.02rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.accordionButton svg {
+  width: 1.2rem;
+  height: 1.2rem;
+  flex-shrink: 0;
+}
+
+.accordionPanel {
+  padding: 0 1.5rem 1.35rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* ---------- Pagination ---------- */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.pageButton {
+  display: grid;
+  min-width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding-inline: 0.5rem;
+  color: var(--color-heading);
+  background: var(--color-surface);
+  font-weight: 700;
+}
+
+.pageButton:hover:not(:disabled) {
+  border-color: var(--color-primary);
+}
+
+.pageButton:disabled {
+  opacity: 0.45;
+}
+
+.pageButton svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.pageActive {
+  border-color: var(--color-primary);
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+}
+
+.pageGap {
+  display: grid;
+  min-width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  color: var(--color-text-muted);
+  background: var(--color-surface);
+}
+
+/* ---------- Dropdown ---------- */
+.dropdown {
+  position: relative;
+}
+
+.menu {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 0.5rem);
+  display: grid;
+  min-width: 14rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.4rem;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  animation: pop 160ms ease both;
+}
+
+.menu-end {
+  right: 0;
+}
+
+.menu-start {
+  left: 0;
+}
+
+.menuItem {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 0.7rem;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.65rem 0.75rem;
+  color: var(--color-heading);
+  background: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.menuItem:hover {
+  background: var(--color-surface-muted);
+}
+
+.menuItem svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.menuItemDanger,
+.menuItemDanger svg {
+  color: var(--color-danger);
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}

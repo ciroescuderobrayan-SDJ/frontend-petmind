@@ -1,0 +1,545 @@
+/* Estilos de los 3 pasos de donar (monto, datos, pago) y del resumen. */
+.flow {
+  width: min(100%, 75rem);
+  margin-inline: auto;
+}
+
+.stepper {
+  margin-bottom: 2rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: 1.75rem;
+  align-items: start;
+}
+
+.card {
+  border-radius: 30px;
+  padding: clamp(1.4rem, 3.4vw, 2.6rem);
+  box-shadow: var(--shadow-lg);
+}
+
+.form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: clamp(1.9rem, 3.2vw, 2.4rem);
+}
+
+.title span {
+  color: var(--color-accent);
+}
+
+.lead {
+  margin-top: 0.4rem;
+  font-size: 1.05rem;
+}
+
+/* ---------- Paso 1 ---------- */
+.frequencies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.frequency {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 18px;
+  padding: 1.05rem 1.1rem;
+  background: var(--color-surface);
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.frequency:hover {
+  border-color: var(--color-border-strong);
+}
+
+.frequency:has(:focus-visible) {
+  outline: 3px solid rgb(79 143 196 / 45%);
+  outline-offset: 2px;
+}
+
+.frequency > span:last-child {
+  display: grid;
+  line-height: 1.35;
+}
+
+.frequency strong {
+  color: var(--color-heading);
+  font-size: 1.05rem;
+}
+
+.frequency small {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.frequencyIcon {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 12px;
+  color: var(--color-heading);
+  background: var(--color-surface-muted);
+}
+
+.frequencyIcon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.frequencyActive {
+  border-color: var(--color-accent);
+  background: var(--color-accent-softer);
+  box-shadow: 0 0 0 4px var(--color-accent-softer);
+}
+
+.frequencyActive .frequencyIcon {
+  color: #ffffff;
+  background: var(--color-accent);
+}
+
+.impactBadge {
+  position: absolute;
+  top: -0.75rem;
+  right: 1rem;
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.65rem;
+  color: #ffffff;
+  background: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.presets {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.preset {
+  display: grid;
+  align-content: center;
+  gap: 0.2rem;
+  min-height: 5.75rem;
+  border: 1.5px solid var(--color-border);
+  border-radius: 16px;
+  padding: 0.75rem 0.5rem;
+  background: var(--color-surface);
+  text-align: center;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.preset:hover {
+  border-color: var(--color-accent);
+}
+
+.preset strong {
+  color: var(--color-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.preset span {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+  line-height: 1.3;
+}
+
+.presetActive {
+  border-color: var(--color-accent);
+  background: var(--color-accent-softer);
+  box-shadow: 0 0 0 4px var(--color-accent-softer);
+}
+
+.presetActive strong {
+  color: var(--color-accent-dark);
+}
+
+.otherAmount {
+  margin-top: 0.75rem;
+}
+
+.currency {
+  position: absolute;
+  left: 1.1rem;
+  color: var(--color-heading);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.otherAmount :global(.input) {
+  min-height: 3.6rem;
+  padding-left: 2.4rem;
+  font-size: 1.05rem;
+}
+
+.otherActive {
+  border-color: var(--color-accent) !important;
+  font-weight: 700;
+}
+
+.impact {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+  border: 1px solid var(--color-primary-soft);
+  border-radius: 20px;
+  padding: 1rem 1.25rem;
+  background: var(--color-primary-softer);
+}
+
+.impact img {
+  width: 4rem;
+  height: 4rem;
+  flex-shrink: 0;
+  border: 3px solid var(--color-surface);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-sm);
+}
+
+.impactText {
+  color: var(--color-primary) !important;
+  font-family: var(--font-script);
+  font-size: clamp(1.3rem, 2.2vw, 1.65rem) !important;
+  line-height: 1.15 !important;
+}
+
+.impact p:last-child {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+}
+
+.checks {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.message {
+  min-height: 5.5rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.75rem;
+}
+
+.actionsColumn {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cancelNote {
+  font-size: 0.88rem;
+  text-align: right;
+}
+
+/* ---------- Paso 2 ---------- */
+.companyToggle {
+  max-width: 31rem;
+}
+
+/* ---------- Paso 3 ---------- */
+.methods {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.method {
+  overflow: hidden;
+  border: 1.5px solid var(--color-border);
+  border-radius: 20px;
+  background: var(--color-surface);
+  transition: border-color 160ms ease, box-shadow 160ms ease;
+}
+
+.methodActive {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px var(--color-accent-softer);
+}
+
+.methodDisabled {
+  opacity: 0.55;
+}
+
+.methodHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  cursor: pointer;
+}
+
+.methodDisabled .methodHeader {
+  cursor: not-allowed;
+}
+
+.methodHeader:has(:focus-visible) {
+  outline: 3px solid rgb(79 143 196 / 45%);
+  outline-offset: -3px;
+}
+
+.radio {
+  width: 1.45rem;
+  height: 1.45rem;
+  flex-shrink: 0;
+  border: 2px solid var(--color-border-strong);
+  border-radius: 50%;
+}
+
+.methodActive .radio {
+  border: 7px solid var(--color-accent);
+}
+
+.methodText {
+  display: grid;
+  flex: 1;
+  line-height: 1.35;
+}
+
+.methodText strong {
+  color: var(--color-heading);
+  font-size: 1.05rem;
+}
+
+.methodText small {
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.brands {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
+.brand {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 0.3rem 0.55rem;
+  color: var(--color-heading);
+  background: var(--color-surface);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.brandActive {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-softer);
+}
+
+.methodBody {
+  display: grid;
+  gap: 1rem;
+  border-top: 1px solid var(--color-border);
+  padding: 1.25rem;
+  background: var(--color-accent-softer);
+}
+
+:global(:root[data-theme='dark']) .methodBody {
+  background: var(--color-surface-muted);
+}
+
+.testHint {
+  color: var(--color-text-muted);
+  font-size: 0.82rem;
+}
+
+/* ---------- Resumen (columna derecha) ---------- */
+.aside {
+  position: sticky;
+  top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.campaign {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.campaignPhoto {
+  position: relative;
+  height: 9.5rem;
+}
+
+.campaignPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.campaignPhoto :global(.badge) {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+}
+
+.campaignBody {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.1rem 1.25rem 1.25rem;
+}
+
+.campaignBody h2 {
+  font-size: 1.2rem;
+}
+
+.campaignFoundation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.fundLogo {
+  width: 1.4rem;
+  height: auto;
+}
+
+.campaignNumbers {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-text);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.summary {
+  border-radius: 24px;
+}
+
+.summary h2 {
+  font-size: 1.1rem;
+}
+
+.summary dl {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1rem 0 0;
+}
+
+.summary dl div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.summary dt {
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.summary dd {
+  margin: 0;
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.total {
+  border-top: 1px dashed var(--color-border-strong);
+  padding-top: 0.9rem;
+}
+
+.total dt,
+.total dd {
+  color: var(--color-heading) !important;
+  font-size: 1.2rem !important;
+  font-weight: 800 !important;
+}
+
+.certificate {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border-radius: 20px;
+  font-size: 0.88rem;
+}
+
+.certificate svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: var(--color-primary);
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    position: static;
+    grid-row: 1;
+  }
+
+  .campaign {
+    display: grid;
+    grid-template-columns: 9rem 1fr;
+  }
+
+  .campaignPhoto {
+    height: 100%;
+  }
+
+  .certificate {
+    display: none;
+  }
+}
+
+@media (max-width: 680px) {
+  .frequencies,
+  .presets {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .frequencies {
+    grid-template-columns: 1fr;
+  }
+
+  .methodHeader {
+    flex-wrap: wrap;
+  }
+
+  .brands {
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 2.45rem;
+  }
+
+  .actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancelNote {
+    text-align: center;
+  }
+}

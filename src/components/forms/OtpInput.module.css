@@ -1,0 +1,33 @@
+.otp {
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.4rem, 1.5vw, 0.7rem);
+}
+
+.box {
+  width: clamp(2.6rem, 9vw, 3.75rem);
+  height: clamp(3rem, 10vw, 4.25rem);
+  border: 1.5px solid var(--color-border);
+  border-radius: 14px;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  font-size: 1.75rem;
+  font-weight: 800;
+  text-align: center;
+  outline: none;
+  transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
+}
+
+.box:focus {
+  border-color: var(--color-primary);
+  box-shadow: var(--ring);
+}
+
+.filled {
+  border-color: var(--color-primary);
+  background: var(--color-primary-softer);
+}
+
+.invalid {
+  border-color: var(--color-danger);
+}

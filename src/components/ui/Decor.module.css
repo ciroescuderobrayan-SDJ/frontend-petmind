@@ -1,0 +1,263 @@
+/* ---------- Confetti ---------- */
+.confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.confetti span {
+  position: absolute;
+  opacity: 0.85;
+  animation: float 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  to {
+    translate: 0 10px;
+  }
+}
+
+/* ---------- EmptyState ---------- */
+.empty {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 0.6rem;
+  border: 2px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  padding: 2.5rem 1.5rem;
+  background: var(--color-primary-softer);
+  text-align: center;
+}
+
+.empty h3 {
+  max-width: 16rem;
+  font-size: 1.25rem;
+}
+
+.empty p {
+  max-width: 20rem;
+  font-size: 0.92rem;
+}
+
+.empty :global(.btn) {
+  margin-top: 0.6rem;
+}
+
+.illustration {
+  width: 10rem;
+  margin-bottom: 0.25rem;
+}
+
+.emptyIcon {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  border-radius: 16px;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.emptyIcon svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* ---------- PetScene ---------- */
+.scene {
+  position: relative;
+  display: grid;
+  min-height: calc(100vh - 7rem);
+  place-items: center;
+  padding: 2rem 1rem 4rem;
+}
+
+.sceneDecor {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.scenePhoto {
+  position: absolute;
+  border: 6px solid var(--color-surface);
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+.photoA {
+  top: 14%;
+  left: 10.5%;
+  width: 9.5rem;
+  height: 9.5rem;
+}
+
+.photoB {
+  top: 12%;
+  right: 10.5%;
+  width: 11rem;
+  height: 11rem;
+}
+
+.photoC {
+  bottom: 18%;
+  left: 20.5%;
+  width: 7rem;
+  height: 7rem;
+}
+
+.photoD {
+  right: 19.5%;
+  bottom: 15%;
+  width: 7.75rem;
+  height: 7.75rem;
+}
+
+.sceneDot {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.dotA {
+  top: 20%;
+  left: 25.5%;
+  width: 1.15rem;
+  height: 1.15rem;
+  background: #f7b3a4;
+}
+
+.dotB {
+  top: 52%;
+  left: 8.5%;
+  width: 0.75rem;
+  height: 0.75rem;
+  background: #8fd0c4;
+}
+
+.dotC {
+  top: 14.5%;
+  right: 29%;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: #f7b3a4;
+}
+
+.dotD {
+  top: 53.5%;
+  right: 8.5%;
+  width: 1rem;
+  height: 1rem;
+  background: #bcd6f2;
+}
+
+.note {
+  position: absolute;
+  top: 44%;
+  font-family: var(--font-script);
+  font-size: 2rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.noteLeft {
+  left: 8.5%;
+  color: var(--color-primary);
+  transform: rotate(-6deg);
+}
+
+.noteRight {
+  right: 7.5%;
+  color: var(--color-accent);
+  transform: rotate(6deg);
+}
+
+.sceneCard {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 33.5rem);
+  border: 1px solid var(--color-border);
+  border-radius: 32px;
+  padding: clamp(1.75rem, 4vw, 3rem) clamp(1.25rem, 4vw, 3rem);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .photoA,
+  .photoB,
+  .photoC,
+  .photoD,
+  .note {
+    display: none;
+  }
+}
+
+/* ---------- IconBadge ---------- */
+.iconBadge {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 28px;
+}
+
+.badge-lg {
+  width: 5.75rem;
+  height: 5.75rem;
+}
+
+.badge-lg > svg {
+  width: 2.35rem;
+  height: 2.35rem;
+}
+
+.badge-md {
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 22px;
+}
+
+.badge-md > svg {
+  width: 1.85rem;
+  height: 1.85rem;
+}
+
+.badge-primary {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.badge-accent {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.badge-solid-accent {
+  color: #ffffff;
+  background: var(--color-accent);
+  box-shadow: 0 0 0 12px var(--color-accent-soft);
+}
+
+.badgeHeart {
+  position: absolute;
+  top: -0.6rem;
+  right: -0.6rem;
+  display: grid;
+  width: 1.85rem;
+  height: 1.85rem;
+  place-items: center;
+  border: 3px solid var(--color-surface);
+  border-radius: 50%;
+  color: #ffffff;
+  background: var(--color-accent);
+}
+
+.badgeHeart svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}

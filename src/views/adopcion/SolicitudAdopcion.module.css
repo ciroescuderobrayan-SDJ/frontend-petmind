@@ -1,0 +1,390 @@
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0.85rem 0 1.5rem;
+}
+
+.title {
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+}
+
+.title span {
+  color: var(--color-primary);
+}
+
+.lead {
+  margin-top: 0.4rem;
+  font-size: 1.05rem;
+}
+
+.saved {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.savedDot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--color-success-dot);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 21.5rem;
+  gap: 1.75rem;
+  align-items: start;
+  margin-top: 1.75rem;
+}
+
+.formCard {
+  display: grid;
+  gap: 1.4rem;
+  border-radius: 28px;
+  padding: clamp(1.4rem, 3vw, 2.5rem);
+}
+
+.stepTitle {
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+}
+
+.stepLead {
+  margin-top: -0.9rem;
+  font-size: 1.02rem;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem 1.25rem;
+}
+
+.docGroup {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-surface);
+}
+
+.docGroup:focus-within {
+  border-color: var(--color-primary);
+  box-shadow: var(--ring);
+}
+
+.docType {
+  width: 5.5rem;
+  border: 0 !important;
+  border-right: 1px solid var(--color-border) !important;
+  border-radius: 12px 0 0 12px;
+  padding-right: 1.5rem;
+  box-shadow: none !important;
+  font-weight: 700;
+}
+
+.docNumber {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+.counter {
+  justify-self: end;
+  color: var(--color-text-subtle);
+  font-size: 0.85rem;
+}
+
+.optionGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: 11rem minmax(0, 1fr);
+  gap: 1rem;
+}
+
+.photos:has(> :nth-child(3)) {
+  grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+}
+
+.photoTile {
+  position: relative;
+  display: grid;
+  min-height: 7.5rem;
+  place-items: center;
+  align-content: center;
+  gap: 0.4rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+  color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary-softer), var(--color-info-soft));
+  font-weight: 700;
+}
+
+.photoTile img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photoTile svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.photoTile span {
+  position: relative;
+  max-width: 90%;
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 0.1rem 0.4rem;
+  background: rgb(255 255 255 / 75%);
+  font-size: 0.85rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.photoRemove {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgb(16 32 31 / 70%);
+}
+
+.photoRemove svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.photoDrop {
+  min-height: 7.5rem;
+}
+
+.photoDrop label {
+  min-height: 7.5rem;
+}
+
+.commitments {
+  display: grid;
+  gap: 0.85rem;
+}
+
+/* ---------- Revisión ---------- */
+.review {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.reviewSection {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 20px;
+}
+
+.reviewSection header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 1.4rem;
+  background: var(--color-surface-muted);
+}
+
+.reviewSection h3 {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.reviewCheck {
+  display: grid;
+  width: 1.85rem;
+  height: 1.85rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: var(--color-primary);
+}
+
+.reviewCheck svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.reviewEdit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.reviewEdit svg {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.reviewSection dl {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+  margin: 0;
+  padding: 1.15rem 1.4rem 1.3rem;
+}
+
+.reviewSection dt {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.reviewSection dd {
+  margin: 0.15rem 0 0;
+  color: var(--color-heading);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- Columna derecha ---------- */
+.aside {
+  position: sticky;
+  top: calc(var(--header-height) + 1.25rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.petCard {
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.petPhoto {
+  position: relative;
+  height: 11rem;
+}
+
+.petPhoto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.petScript {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #ffffff;
+  font-family: var(--font-script);
+  font-size: 1.6rem;
+  text-shadow: 0 2px 8px rgb(0 0 0 / 35%);
+}
+
+.petScript svg {
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.petBody {
+  padding: 1rem 1.25rem 1.2rem;
+}
+
+.petName {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.petName strong {
+  color: var(--color-heading);
+  font-size: 1.35rem;
+}
+
+.petMeta {
+  margin-top: 0.15rem;
+  font-size: 0.92rem;
+}
+
+.petFoundation {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+  border-top: 1px dashed var(--color-border-strong);
+  padding-top: 0.85rem;
+  color: var(--color-text);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.help {
+  border-radius: 24px;
+}
+
+.help h2 {
+  font-size: 1.15rem;
+}
+
+.help p {
+  margin-top: 0.35rem;
+  font-size: 0.92rem;
+}
+
+.helpActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.privacy {
+  border-radius: 18px;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    position: static;
+    grid-row: 1;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .privacy {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .fields,
+  .optionGrid,
+  .reviewSection dl,
+  .aside {
+    grid-template-columns: 1fr;
+  }
+
+  .photos {
+    grid-template-columns: 1fr;
+  }
+}

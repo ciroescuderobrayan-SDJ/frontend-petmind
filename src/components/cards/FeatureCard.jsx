@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import styles from './FeatureCard.module.css'
 
-export default function FeatureCard({ image, title, description }) {
+export default function FeatureCard({ image, title, description, to }) {
   return (
-    <article className={styles.card}>
+    <Link className={styles.card} to={to}>
       <span className={styles.icon} aria-hidden="true">
         <img src={image} alt="" />
       </span>
@@ -18,6 +19,6 @@ export default function FeatureCard({ image, title, description }) {
           <path d="m13 7 5 5-5 5" />
         </svg>
       </span>
-    </article>
+    </Link>
   )
 }

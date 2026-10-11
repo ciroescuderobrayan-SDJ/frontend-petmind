@@ -1,24 +1,15 @@
-import '../styles/authLayout.css'
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import styles from './AuthLayout.module.css'
 
+// Acceso (01): cada pantalla trae su propia barra superior (logo + enlace), como en los mockups.
 const AuthLayout = () => {
-    return (
-    <div className="auth-shell">
-        <header className="auth-header">
-        <Link className="auth-brand" to="/">
-            PetMind
-        </Link>
-        </header>
-
-        <main className="auth-content">
+  return (
+    <div className={styles.shell}>
+      <main className={styles.content}>
         <Outlet />
-        </main>
-
-        <footer className="auth-footer">
-        <p>Conectamos vidas, cambiamos historias.</p>
-        </footer>
+      </main>
     </div>
-    )
+  )
 }
 
 export default AuthLayout

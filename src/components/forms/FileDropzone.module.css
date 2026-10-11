@@ -1,0 +1,155 @@
+.zone {
+  display: flex;
+  height: 100%;
+  min-height: 4.5rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  border: 2px dashed var(--color-border-strong);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  background: var(--color-surface);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.zone:hover,
+.dragging {
+  border-color: var(--color-primary);
+  background: var(--color-primary-softer);
+}
+
+.zone:has(:focus-visible) {
+  outline: 3px solid rgb(79 143 196 / 45%);
+  outline-offset: 2px;
+}
+
+.stack {
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1.5rem;
+}
+
+.row {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.icon {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex-shrink: 0;
+  color: var(--color-primary);
+}
+
+.text {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.title {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.row .title {
+  color: var(--color-text-subtle);
+  font-weight: 500;
+}
+
+.accent {
+  border-color: #f2b6a8;
+  background: var(--color-accent-softer);
+}
+
+.accent .icon,
+.accent .title {
+  color: var(--color-accent);
+}
+
+.accent:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.info {
+  border-color: #b9d3ea;
+  border-style: dashed;
+  background: var(--color-info-soft);
+}
+
+.info .icon,
+.info .title {
+  color: var(--color-info);
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border: 1px solid var(--color-primary-soft);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  background: var(--color-primary-softer);
+}
+
+.chipIcon {
+  display: grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.chipIcon svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.chipText {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+}
+
+.chipText strong {
+  overflow: hidden;
+  color: var(--color-heading);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chipText span {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.chipRemove {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  background: transparent;
+}
+
+.chipRemove:hover {
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.chipRemove svg {
+  width: 1rem;
+  height: 1rem;
+}

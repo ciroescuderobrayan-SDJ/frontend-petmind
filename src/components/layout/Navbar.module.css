@@ -1,0 +1,230 @@
+.header {
+  position: sticky;
+  z-index: 30;
+  top: 0;
+  border-bottom: 1px solid var(--color-border);
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.navbar {
+  display: flex;
+  min-height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  flex-shrink: 0;
+}
+
+.links {
+  display: flex;
+  align-self: stretch;
+  align-items: stretch;
+  gap: clamp(1rem, 2.2vw, 2.1rem);
+}
+
+.link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: var(--color-heading);
+  font-size: 0.98rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.link::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  content: '';
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transition: transform 180ms ease;
+}
+
+.link:hover {
+  color: var(--color-primary);
+}
+
+.linkActive {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.linkActive::after {
+  transform: scaleX(1);
+}
+
+.mobileLogin {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.action {
+  color: var(--color-heading);
+}
+
+.bell {
+  position: relative;
+}
+
+.bellDot {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.65rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border: 2px solid var(--color-surface);
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-sizing: content-box;
+}
+
+.login {
+  margin-left: 0.5rem;
+  border-width: 1.5px;
+  padding-inline: 1.5rem;
+}
+
+.userButton {
+  display: inline-flex;
+  min-height: 2.9rem;
+  align-items: center;
+  gap: 0.55rem;
+  margin-left: 0.4rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.75rem 0.3rem 0.35rem;
+  color: var(--color-heading);
+  background: var(--color-surface);
+  font-weight: 700;
+}
+
+.userButton:hover {
+  border-color: var(--color-border-strong);
+}
+
+.userName {
+  max-width: 8rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.userChevron {
+  width: 1rem;
+  height: 1rem;
+}
+
+.search {
+  position: relative;
+}
+
+.searchBox {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  display: flex;
+  width: min(26rem, calc(100vw - 2rem));
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 0.45rem 0.45rem 0.45rem 0.9rem;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.searchBox > svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+  color: var(--color-text-muted);
+}
+
+.searchInput {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  background: transparent;
+  outline: none;
+}
+
+.menuButton {
+  display: none;
+  margin-left: 0.25rem;
+}
+
+@media (max-width: 1100px) {
+  .menuButton {
+    display: inline-grid;
+  }
+
+  .links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    border-bottom: 1px solid var(--color-border);
+    padding: 0.5rem 1.25rem 1.25rem;
+    background: var(--color-surface);
+    box-shadow: var(--shadow-md);
+  }
+
+  .linksOpen {
+    display: flex;
+  }
+
+  .link {
+    padding: 0.85rem 0.25rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .link::after {
+    display: none;
+  }
+
+  .mobileLogin {
+    display: inline-flex;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    gap: 0.75rem;
+  }
+
+  .logo :global(span span:last-child) {
+    display: none;
+  }
+
+  .login,
+  .hideSm,
+  .userName,
+  .userChevron {
+    display: none;
+  }
+
+  .userButton {
+    margin-left: 0;
+    padding: 0.2rem;
+  }
+}

@@ -1,0 +1,271 @@
+.page {
+  position: relative;
+  overflow: hidden;
+  padding-block: 3.5rem 5rem;
+  background: linear-gradient(180deg, var(--color-accent-softer) 0%, var(--color-bg) 60%);
+}
+
+.layout {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 26rem;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.message {
+  padding-top: 1.5rem;
+}
+
+.script {
+  color: var(--color-accent);
+  font-family: var(--font-script);
+  font-size: 2.2rem;
+  line-height: 1;
+  transform: rotate(-2deg);
+  transform-origin: left;
+}
+
+.title {
+  max-width: 40rem;
+  margin-top: 0.75rem;
+  font-size: clamp(2.3rem, 4.4vw, 3.6rem);
+  line-height: 1.04;
+}
+
+.title span {
+  color: var(--color-primary);
+}
+
+.lead {
+  max-width: 37rem;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+.progressCard {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 40rem;
+  margin-top: 2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 1.25rem;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-md);
+}
+
+.progressCard img {
+  width: 5.25rem;
+  height: 5.25rem;
+  flex-shrink: 0;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.progressBody {
+  display: grid;
+  flex: 1;
+  gap: 0.4rem;
+}
+
+.progressBody strong {
+  color: var(--color-heading);
+  font-size: 1.12rem;
+}
+
+.progressBody > span {
+  color: var(--color-text-muted);
+  font-size: 0.92rem;
+}
+
+.progressLabels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.progressLabels span:first-child {
+  color: var(--color-primary);
+}
+
+.progressLabels span:last-child {
+  color: var(--color-accent-dark);
+}
+
+.shareTitle {
+  margin-top: 2rem;
+  font-size: 1.08rem;
+  letter-spacing: -0.01em;
+}
+
+.share {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.85rem;
+}
+
+.share :global(.btn) {
+  border-radius: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.actions :global(.btn) {
+  border-radius: 14px;
+}
+
+/* ---------- Comprobante ---------- */
+.receipt {
+  position: relative;
+  border: 1px solid var(--color-border);
+  border-radius: 30px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-lg);
+}
+
+.receiptTop {
+  display: grid;
+  justify-items: center;
+  gap: 0.6rem;
+  padding: 2rem 1.75rem 1.5rem;
+  text-align: center;
+}
+
+.check {
+  display: grid;
+  width: 4.75rem;
+  height: 4.75rem;
+  place-items: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 10px var(--color-primary-softer);
+}
+
+.check svg {
+  width: 1.9rem;
+  height: 1.9rem;
+}
+
+.amount {
+  margin-top: 0.85rem;
+  color: var(--color-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.amount small {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.approved {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.85rem;
+  color: var(--color-primary);
+  background: var(--color-primary-softer);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.approved svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.cut {
+  position: relative;
+  height: 1.5rem;
+}
+
+.cut::before {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  left: 1.5rem;
+  border-top: 2px dashed var(--color-border);
+  content: '';
+}
+
+.cut::after {
+  position: absolute;
+  top: 0;
+  right: -0.8rem;
+  left: -0.8rem;
+  height: 1.5rem;
+  content: '';
+  background:
+    radial-gradient(circle at 0.75rem 50%, var(--color-bg) 0.75rem, transparent 0.8rem) left / 50% 100% no-repeat,
+    radial-gradient(circle at calc(100% - 0.75rem) 50%, var(--color-bg) 0.75rem, transparent 0.8rem) right / 50% 100% no-repeat;
+}
+
+.rows {
+  display: grid;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 1rem 1.75rem 1.25rem;
+}
+
+.rows div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.rows dt {
+  color: var(--color-text-muted);
+}
+
+.rows dd {
+  margin: 0;
+  color: var(--color-heading);
+  font-weight: 700;
+  text-align: right;
+}
+
+.downloads {
+  display: grid;
+  gap: 0.75rem;
+  padding: 0.5rem 1.75rem 1.75rem;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .receipt {
+    max-width: 30rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .progressCard {
+    align-items: flex-start;
+  }
+
+  .progressCard img {
+    width: 3.75rem;
+    height: 3.75rem;
+  }
+
+  .actions :global(.btn) {
+    width: 100%;
+  }
+}

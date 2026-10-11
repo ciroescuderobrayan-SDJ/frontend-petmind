@@ -3,10 +3,10 @@ import { featureCards } from '../../data/featureCards'
 
 export default function FeatureCards() {
   return (
-    <main className="feature-grid">
+    <section className="feature-grid" aria-label="Cómo puedes ayudar">
       {featureCards.map((card) => (
         <FeatureCard key={card.id} {...card} />
       ))}
-    </main>
+    </section>
   )
 }

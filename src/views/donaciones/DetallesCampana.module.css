@@ -1,0 +1,504 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 21.5rem;
+  gap: 2rem;
+  align-items: start;
+}
+
+.main {
+  min-width: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+}
+
+.tags :global(.badge) {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.8rem;
+}
+
+.location {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.7rem;
+  color: var(--color-heading);
+  background: var(--color-surface-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.location svg {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.title {
+  margin-top: 0.85rem;
+  font-size: clamp(2rem, 3.4vw, 2.7rem);
+}
+
+.byline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.foundationLink {
+  color: var(--color-heading);
+  font-weight: 700;
+}
+
+.foundationLink:hover {
+  color: var(--color-primary);
+}
+
+.date {
+  color: var(--color-text-muted);
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 1.2 / 1;
+  border-radius: var(--radius-lg);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo :global(.badge) {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border-radius: 8px;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.82rem;
+}
+
+.after {
+  display: grid;
+  place-content: center;
+  gap: 0.6rem;
+  border: 2px dashed var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  background: repeating-linear-gradient(135deg, var(--color-primary-softer) 0 14px, var(--color-bg) 14px 28px);
+  text-align: center;
+}
+
+.after :global(.script) {
+  color: var(--color-primary);
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+}
+
+.after p {
+  max-width: 17rem;
+  margin-inline: auto;
+  color: var(--color-text);
+  font-size: 0.92rem;
+}
+
+.tabs {
+  margin-top: 2rem;
+}
+
+.tabPanel {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.story p {
+  color: var(--color-text);
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
+.story p + p {
+  margin-top: 0.85rem;
+}
+
+.block {
+  border-radius: 24px;
+}
+
+.blockTitle {
+  margin-bottom: 1.25rem;
+  font-size: 1.3rem;
+  letter-spacing: -0.025em;
+}
+
+.stack {
+  display: flex;
+  height: 0.75rem;
+  gap: 3px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+}
+
+.stack span {
+  flex-basis: 0;
+  height: 100%;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 2.5rem;
+  margin-top: 1.25rem;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dot {
+  width: 0.7rem;
+  height: 0.7rem;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
+.concept {
+  flex: 1;
+  color: var(--color-heading);
+  font-size: 0.95rem;
+}
+
+.legend strong {
+  color: var(--color-heading);
+  font-size: 0.95rem;
+}
+
+.quoteRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.4rem;
+  border-radius: 14px;
+  padding: 0.8rem 1rem;
+  color: var(--color-primary);
+  background: var(--color-primary-softer);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.quoteRow svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  flex-shrink: 0;
+}
+
+.quoteRow span {
+  flex: 1;
+}
+
+.updates {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.updates li {
+  position: relative;
+  display: flex;
+  gap: 1.1rem;
+}
+
+.updates li:not(:last-child)::after {
+  position: absolute;
+  top: 3.25rem;
+  bottom: -1.2rem;
+  left: 1.5rem;
+  border-left: 2px solid var(--color-border);
+  content: '';
+}
+
+.dateBadge {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  place-content: center;
+  border-radius: 12px;
+  color: var(--color-primary);
+  background: var(--color-primary-softer);
+  font-size: 0.68rem;
+  font-weight: 800;
+  line-height: 1.05;
+  text-align: center;
+}
+
+.dateBadge strong {
+  font-size: 1rem;
+}
+
+.updates li:nth-child(even) .dateBadge {
+  color: var(--color-info-dark);
+  background: var(--color-info-soft);
+}
+
+.updates h3 {
+  font-size: 1.05rem;
+}
+
+.updates p {
+  margin-top: 0.2rem;
+  font-size: 0.95rem;
+}
+
+.updatePhoto {
+  width: 9.5rem;
+  height: 6rem;
+  margin-top: 0.75rem;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.receipts {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.receipts li {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.receipts li > span:nth-child(2) {
+  flex: 1;
+  color: var(--color-heading);
+  font-weight: 600;
+}
+
+/* ---------- Columna derecha ---------- */
+.aside {
+  position: sticky;
+  top: calc(var(--header-height) + 1.25rem);
+  display: grid;
+  gap: 1rem;
+}
+
+.donateCard {
+  border-radius: 26px;
+  padding: 1.6rem;
+  box-shadow: var(--shadow-md);
+}
+
+.raised {
+  display: block;
+  color: var(--color-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.goal {
+  margin: 0.3rem 0 1rem;
+  font-size: 0.95rem;
+}
+
+.numbers {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 1.1rem 0 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+}
+
+.numbers div {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 0.75rem 0.4rem;
+  text-align: center;
+}
+
+.numbers div + div {
+  border-left: 1px solid var(--color-border);
+}
+
+.numbers dt {
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.numbers dd {
+  margin: 0;
+  color: var(--color-heading);
+  font-size: 1.3rem;
+  font-weight: 800;
+}
+
+.amounts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.amount {
+  min-height: 2.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-heading);
+  background: var(--color-surface);
+  font-weight: 700;
+}
+
+.amount:hover {
+  border-color: var(--color-primary);
+}
+
+.amountActive {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-softer);
+}
+
+.donateButton {
+  margin-top: 0.75rem;
+  border-radius: 14px;
+}
+
+.secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.following {
+  border-color: #f6c9bd;
+  color: #e5533d;
+  background: var(--color-accent-soft);
+}
+
+.donors {
+  border-radius: 24px;
+}
+
+.donorsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.donorsHeader h2 {
+  font-size: 1.05rem;
+}
+
+.donorsHeader button {
+  font-size: 0.85rem;
+}
+
+.donors ul {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.donors li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.donors li > div {
+  display: grid;
+  flex: 1;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.donors strong {
+  color: var(--color-heading);
+  font-size: 0.95rem;
+}
+
+.donors li > div span {
+  overflow: hidden;
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.donorAmount {
+  color: var(--color-heading);
+  font-weight: 800;
+}
+
+.noDonors {
+  font-size: 0.92rem;
+}
+
+.verified {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-radius: 20px;
+}
+
+.verified div {
+  display: grid;
+  line-height: 1.35;
+}
+
+.verified strong {
+  color: var(--color-heading);
+}
+
+.verified div span {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.others {
+  margin-top: 3.5rem;
+}
+
+@media (max-width: 1080px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .aside {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .photos,
+  .legend {
+    grid-template-columns: 1fr;
+  }
+
+  .after {
+    min-height: 10rem;
+  }
+}

@@ -1,0 +1,115 @@
+/* Estilos del banner de Emanuel (antes styles/footer.css), ahora como CSS Module. */
+.section {
+  padding-block: 3.5rem;
+}
+
+.banner {
+  position: relative;
+  display: flex;
+  min-height: 8.75rem;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: var(--color-primary-soft);
+}
+
+.pets {
+  position: absolute;
+  bottom: 0;
+  left: 7%;
+  z-index: 1;
+  width: min(18rem, 28%);
+  max-height: 10rem;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+.decoration {
+  position: absolute;
+  bottom: 0;
+  width: 5.5rem;
+  opacity: 0.55;
+}
+
+.decorationLeft {
+  left: 1.5rem;
+}
+
+.decorationRight {
+  right: 1.5rem;
+}
+
+.heart {
+  position: relative;
+  z-index: 1;
+  width: 2.4rem;
+  margin-right: 1.5rem;
+  margin-left: 9rem;
+}
+
+.message {
+  position: relative;
+  z-index: 1;
+  max-width: 43rem;
+  text-align: center;
+}
+
+.message p {
+  margin-bottom: 0.4rem;
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.message h2 {
+  margin-bottom: 0.35rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.8rem);
+  letter-spacing: -0.04em;
+}
+
+.message span {
+  color: var(--color-text-muted);
+  font-size: clamp(0.75rem, 1.4vw, 0.92rem);
+}
+
+@media (max-width: 700px) {
+  .banner {
+    min-height: 12rem;
+    padding: 2rem 1.25rem 1.5rem;
+  }
+
+  .pets {
+    left: 1rem;
+    width: 10rem;
+    opacity: 0.75;
+  }
+
+  .decoration {
+    width: 3.5rem;
+  }
+
+  .decorationLeft {
+    left: 0.25rem;
+  }
+
+  .decorationRight {
+    right: 0.25rem;
+  }
+
+  .heart {
+    position: absolute;
+    top: 1.25rem;
+    left: 50%;
+    width: 1.7rem;
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .message {
+    align-self: flex-start;
+    margin-top: 1.5rem;
+    padding-inline: 2rem;
+  }
+}
