@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 240" width="360" height="240">
+  <!-- fondos -->
+  <circle cx="150" cy="120" r="95" fill="#CFE7E2"/>
+  <circle cx="245" cy="150" r="72" fill="#DDEFEB"/>
+  <!-- hojas -->
+  <g fill="#CFE7E2">
+    <path d="M30 240 C32 200 36 170 44 140" fill="none" stroke="#CFE7E2" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="26" cy="190" rx="9" ry="20" transform="rotate(-35 26 190)"/>
+    <ellipse cx="54" cy="176" rx="8" ry="18" transform="rotate(30 54 176)"/>
+    <ellipse cx="38" cy="146" rx="7" ry="17" transform="rotate(-15 38 146)"/>
+    <ellipse cx="58" cy="208" rx="8" ry="18" transform="rotate(40 58 208)"/>
+    <path d="M334 240 C332 210 330 185 326 160" fill="none" stroke="#CFE7E2" stroke-width="3" stroke-linecap="round"/>
+    <ellipse cx="342" cy="196" rx="8" ry="18" transform="rotate(30 342 196)"/>
+    <ellipse cx="316" cy="186" rx="8" ry="17" transform="rotate(-30 316 186)"/>
+    <ellipse cx="330" cy="160" rx="7" ry="16" transform="rotate(10 330 160)"/>
+  </g>
+  <!-- perro sentado, perfil a la derecha -->
+  <g fill="#0B6B67">
+    <path d="M150 30 C172 28 188 42 194 60 L208 70 C215 75 213 88 203 90 L184 94
+             C178 110 176 130 180 160 L184 240 L88 240
+             C66 240 58 220 64 198 C72 168 98 150 116 128
+             C124 116 124 100 122 88 C118 58 128 32 150 30 Z"/>
+  </g>
+  <path d="M143 44 C126 46 118 70 122 102 C124 114 136 114 138 102 C142 82 148 62 143 44 Z" fill="#095753"/>
+  <path d="M112 180 C118 196 120 214 118 238" fill="none" stroke="#E8F3F0" stroke-width="3" stroke-linecap="round" opacity=".55"/>
+  <path d="M168 150 C172 176 172 206 170 238" fill="none" stroke="#E8F3F0" stroke-width="3" stroke-linecap="round" opacity=".45"/>
+  <circle cx="170" cy="58" r="3.4" fill="#FFFFFF"/>
+  <!-- gato sentado -->
+  <g fill="#0B6B67">
+    <path d="M238 150 L240 130 L250 141 Z"/>
+    <path d="M262 141 L270 128 L272 148 Z"/>
+    <circle cx="256" cy="156" r="17"/>
+    <path d="M268 150 C272 152 275 156 274 160 C272 164 268 166 264 166 Z"/>
+    <path d="M244 166 C232 186 228 212 234 240 L284 240 C288 214 280 186 266 168 Z"/>
+    <path d="M234 236 C214 238 204 226 212 214" fill="none" stroke="#0B6B67" stroke-width="7" stroke-linecap="round"/>
+  </g>
+  <circle cx="263" cy="151" r="2" fill="#FFFFFF"/>
+  <!-- corazon -->
+  <path d="M258 108 C252 103.5 246 99.5 246 93 C246 89.5 248.8 87 252 87 C254.4 87 256.5 88.3 258 90.2 C259.5 88.3 261.6 87 264 87 C267.2 87 270 89.5 270 93 C270 99.5 264 103.5 258 108 Z" fill="none" stroke="#5FA89F" stroke-width="3.2" stroke-linejoin="round"/>
+</svg>
