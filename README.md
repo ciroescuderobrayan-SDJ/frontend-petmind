@@ -1,16 +1,57 @@
-# React + Vite
+# PetMind
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PetMind es una aplicación web de demostración para conectar personas, animales en adopción y fundaciones de protección animal en Colombia. Incluye recorridos públicos, formularios controlados, paneles por tipo de cuenta y datos locales persistidos en el navegador.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 20.19+ o 22.12+.
+- npm incluido con Node.js.
 
-## React Compiler
+## Iniciar el proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```powershell
+npm install
+npm run dev
+```
 
-## Expanding the ESLint configuration
+Vite muestra la dirección local disponible en la terminal. Para elegir un puerto específico:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```powershell
+npm run dev -- --port 5199
+```
+
+## Verificaciones
+
+```powershell
+npm run lint
+npm run build
+```
+
+## Cuentas de demostración
+
+La contraseña para las cuentas precargadas es `petmind123`.
+
+| Tipo | Correo |
+| --- | --- |
+| Persona | `brayan.ciro@correo.com` |
+| Fundación | `huellitas@correo.com` |
+
+Los datos de las cuentas, mascotas, solicitudes, campañas, aportes y reportes se guardan localmente en el navegador bajo claves `petmind.v1.*`. Los formularios simulan los flujos de la plataforma: no realizan pagos, no envían correos ni crean registros en un servidor.
+
+## Equipo del proyecto integrador
+
+- Brayan Ciro
+- Santiago Varela
+- Emanuel Gómez
+
+## Restablecer datos locales
+
+Para volver al estado inicial, abre las herramientas de desarrollador del navegador y ejecuta en la consola:
+
+```js
+Object.keys(localStorage).filter((key) => key.startsWith('petmind.v1.')).forEach((key) => localStorage.removeItem(key))
+Object.keys(sessionStorage).filter((key) => key.startsWith('petmind.v1.')).forEach((key) => sessionStorage.removeItem(key))
+location.reload()
+```
+
+También puedes borrar los datos del sitio desde la configuración del navegador. Al restablecer las claves, se cerrará la sesión de demostración.
