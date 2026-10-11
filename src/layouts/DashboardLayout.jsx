@@ -211,7 +211,7 @@ export default function DashboardLayout({ variant = 'persona' }) {
             <Link className="icon-btn" to={isFoundation ? '/fundacion/mensajes' : '/cuenta/mensajes'} aria-label="Mensajes">
               <Icon name="message" />
             </Link>
-            <Link className={`icon-btn ${styles.bell}`} to={isFoundation ? '/fundacion' : '/cuenta#notificaciones'} aria-label="Notificaciones">
+            <Link className={`icon-btn ${styles.bell}`} to={isFoundation ? '/fundacion' : '/cuenta/perfil#notificaciones'} aria-label="Notificaciones">
               <Icon name="bell" />
               <span className={styles.bellDot} />
             </Link>

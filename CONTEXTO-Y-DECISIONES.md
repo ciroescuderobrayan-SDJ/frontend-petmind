@@ -3,7 +3,7 @@
 Bitácora del trabajo para pasar a React **todas** las pantallas de `02-Visuales PetMind/03 - Mockups de pantallas` (42 pantallas + la página de inicio de `01 - Referencia de diseño`).
 Se actualiza a medida que avanza el trabajo: qué se hizo, cómo está organizado y por qué se tomó cada decisión.
 
-> Estado: **pausado y traspasado a Codex** (21:35). Claude hizo la base y las secciones Inicio, 01, 02 y 03; Codex sigue con 04 a 08 siguiendo `PROMPT-CODEX.md`, y después Claude audita. Ver secciones 2 y 5.
+> Estado: **pausado y traspasado a Codex** (20:21). Claude hizo la base y las secciones Inicio, 01, 02 y 03; Codex sigue con 04 a 08 siguiendo `PROMPT-CODEX.md`, y después Claude audita. Ver secciones 2 y 5.
 
 ---
 
@@ -24,11 +24,11 @@ Se actualiza a medida que avanza el trabajo: qué se hizo, cómo está organizad
 | 01 · Acceso | 9 | ✅ |
 | 02 · Adopción | 8 | ✅ |
 | 03 · Donaciones | 6 | ✅ |
-| 04 · Fundaciones | 2 | 🟡 Pendiente (Codex). Ya existen `FoundationCard` y `components/ui/FoundationMap.jsx` (este último sin probar) |
-| 05 · Historias | 2 | ⏳ Pendiente (Codex). Datos en `data/stories.js` y `BeforeAfter` listos |
-| 06 · Institucional y reportes | 4 | ⏳ Pendiente (Codex). Datos en `data/institutional.js` y `data/reports.js` |
-| 07 · Panel del usuario | 5 | ⏳ Pendiente (Codex). `DashboardLayout` hecho pero sin revisar en pantalla |
-| 08 · Panel de la fundación | 6 | ⏳ Pendiente (Codex). Reemplazar los stubs de `views/fundacion/` |
+| 04 · Fundaciones | 2 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
+| 05 · Historias | 2 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
+| 06 · Institucional y reportes | 4 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
+| 07 · Panel del usuario | 5 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
+| 08 · Panel de la fundación | 6 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
 
 ## 3. Decisiones (y por qué)
 
@@ -48,19 +48,27 @@ Se actualiza a medida que avanza el trabajo: qué se hizo, cómo está organizad
 
 _(Se irán agregando más decisiones abajo a medida que aparezcan.)_
 
+14. **Secciones 04 a 08:** se añadieron las rutas públicas de fundaciones, historias, contacto, institucional y reportes; las cuentas privadas usan `DashboardLayout` y filtran datos por `user.id` o `user.foundationId`. Los formularios y acciones persisten en los contextos `petmind.v1.*` existentes.
+15. **Sin servicio de backend:** los reportes notifican a las primeras fundaciones verificadas usando distancias de demostración; no hay coordenadas en los datos actuales para calcular cercanía real. El mapa, documentos, certificados, mensajes, invitaciones y pagos se mantienen como demostración local.
+16. **Alcance de los paneles:** se priorizaron acciones funcionales con los esquemas y componentes disponibles; detalles de interacción como gráfica, adjuntos avanzados y drag-and-drop requieren revisión visual y funcional contra los mockups.
 ## 4. Bitácora
 
-- **2026-10-10 · 18:45** — Revisión de las 42 pantallas, los 8 mapas de navegación y los recursos gráficos. Se midieron colores y se identificó la fuente manuscrita. Se definió la estructura de carpetas, rutas y contextos.
-- **19:30** — Base lista: variables y clases en `global.css` (+ tema oscuro en `ThemeProvider.css`), íconos, utilidades (`utils/format.js`, `utils/dates.js`), datos de prueba (`data/`), 9 contextos, layouts (principal, acceso, donación y panel) y componentes de `ui/`, `forms/` y `cards/`. Fotos y logo copiados a `public/img/`.
-- **19:40** — Inicio completo (hero, tarjetas de Emanuel, mascotas, historias, videos, banner y pie). Se revisó con capturas de Chrome contra la referencia.
-- **20:05** — 01 · Acceso: las 9 pantallas, con validaciones y flujo real (registro → verificación → panel; recuperar → enlace → nueva → lista).
-- **20:40** — 02 · Adopción: listado con filtros (todos funcionan y se combinan), perfil con galería y pestañas, formulario en 4 pasos (el paso va en `?paso=`, borrador automático, validación por paso), solicitud enviada y seguimiento con línea de tiempo y chat.
-- **21:20** — 03 · Donaciones: listado con filtros y orden, detalle con pestañas, flujo de donar en 3 pasos (estado compartido en `DonarFlujo.jsx` con `useOutletContext`) y comprobante. Al pagar, la campaña suma el monto y el donante al instante (75% → 76% en Toby).
-- **21:35** — Brayan pidió pausar y pasarle el trabajo a Codex. Estado al pausar: `npm run lint` y `npm run build` pasan (solo el aviso de tamaño del bundle). Se escribió `PROMPT-CODEX.md` con el contexto, las reglas, las APIs y la especificación de cada pantalla pendiente. Cuando Codex termine, Claude audita contra los mockups.
+_Las entradas van en orden; solo la última tiene hora real._
+
+
+- **2026-10-10 · inicio** — Revisión de las 42 pantallas, los 8 mapas de navegación y los recursos gráficos. Se midieron colores y se identificó la fuente manuscrita. Se definió la estructura de carpetas, rutas y contextos.
+- Base lista: variables y clases en `global.css` (+ tema oscuro en `ThemeProvider.css`), íconos, utilidades (`utils/format.js`, `utils/dates.js`), datos de prueba (`data/`), 9 contextos, layouts (principal, acceso, donación y panel) y componentes de `ui/`, `forms/` y `cards/`. Fotos y logo copiados a `public/img/`.
+- Inicio completo (hero, tarjetas de Emanuel, mascotas, historias, videos, banner y pie). Se revisó con capturas de Chrome contra la referencia.
+- 01 · Acceso: las 9 pantallas, con validaciones y flujo real (registro → verificación → panel; recuperar → enlace → nueva → lista).
+- 02 · Adopción: listado con filtros (todos funcionan y se combinan), perfil con galería y pestañas, formulario en 4 pasos (el paso va en `?paso=`, borrador automático, validación por paso), solicitud enviada y seguimiento con línea de tiempo y chat.
+- 03 · Donaciones: listado con filtros y orden, detalle con pestañas, flujo de donar en 3 pasos (estado compartido en `DonarFlujo.jsx` con `useOutletContext`) y comprobante. Al pagar, la campaña suma el monto y el donante al instante (75% → 76% en Toby).
+- **20:21** — Brayan pidió pausar y pasarle el trabajo a Codex. Estado al pausar: `npm run lint` y `npm run build` pasan (solo el aviso de tamaño del bundle). Se escribió `PROMPT-CODEX.md` con el contexto, las reglas, las APIs y la especificación de cada pantalla pendiente. Cuando Codex termine, Claude audita contra los mockups.
+
+- **21:06** — Codex implementó secciones 04 a 08: directorio y perfil de fundaciones; historias y detalle; nosotros, contacto y reporte con seguimiento; panel de usuario y panel de fundación; rutas privadas/públicas, metadatos `es-CO` y README. `npm run lint` y `npm run build` pasaron; build mantiene el aviso por bundle >500 kB. Se corrigieron imports de `FileDropzone`/`FileChip`, enlaces de notificaciones y variables CSS de los paneles. No se completó la prueba visual: CUA informó que no había navegador configurado y la aprobación de la ventana Chrome agotó el tiempo; Vite arrancó en 5200 porque 5199 ya estaba ocupado. No se hizo ningún cambio de Git. Falta verificar tamaños 1440/390, tema claro/oscuro y flujos interactivos contra los mockups.
 
 ## 5. Traspaso
 
 - Instrucciones para Codex: `PROMPT-CODEX.md` (raíz del repo). Codex debe seguir escribiendo en esta bitácora y marcar el estado de cada sección.
-- Nada se ha subido a git: los cambios siguen en el árbol de trabajo.
+- Git: Claude no hizo commits ni push. Entre las 20:17 y las 20:19 otro proceso (no Claude) hizo 18 commits en la rama `feature/pantallas-petmind`, la subió a `origin` y el PR #10 quedó unido a `main` en GitHub. `PROMPT-CODEX.md` quedó sin commit. De aquí en adelante: nada de commits ni push sin autorización de Brayan.
 - Cuentas de prueba: `brayan.ciro@correo.com` (persona) y `huellitas@correo.com` (fundación), contraseña `petmind123`.
 - Para reiniciar los datos de la demo: borrar en el navegador las llaves `petmind.v1.*` de `localStorage`.
