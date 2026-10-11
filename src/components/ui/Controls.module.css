@@ -1,0 +1,363 @@
+/* ---------- SegmentedControl ---------- */
+.segmented {
+  display: inline-flex;
+  gap: 0.35rem;
+}
+
+.full {
+  display: flex;
+}
+
+.full .segment {
+  flex: 1;
+}
+
+.segment {
+  position: relative;
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 10px;
+  padding: 0.45rem 0.65rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
+  user-select: none;
+}
+
+.segment:has(:focus-visible) {
+  outline: 3px solid rgb(79 143 196 / 45%);
+  outline-offset: 1px;
+}
+
+.track {
+  border-radius: 12px;
+  padding: 0.3rem;
+  background: var(--color-surface-sunken);
+}
+
+.track .segment:hover {
+  color: var(--color-heading);
+}
+
+.track .segmentActive {
+  color: var(--color-primary);
+  background: var(--color-surface);
+  box-shadow: 0 1px 3px rgb(16 32 31 / 10%);
+  font-weight: 700;
+}
+
+.buttons {
+  gap: 0.75rem;
+}
+
+.buttons .segment {
+  min-height: 3.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  color: var(--color-heading);
+  background: var(--color-surface);
+}
+
+.buttons .segment:hover {
+  border-color: var(--color-primary);
+}
+
+.buttons .segmentActive {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: var(--color-primary-softer);
+  font-weight: 700;
+}
+
+.seg-sm .segment {
+  min-height: 2.2rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.buttons.seg-sm .segment {
+  min-height: 2.6rem;
+}
+
+.segmentCheck {
+  width: 1rem;
+  height: 1rem;
+}
+
+.segmentIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.segmentDisabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+}
+
+.dot-success {
+  background: var(--color-success-dot);
+}
+
+.dot-warning {
+  background: var(--color-warning-dot);
+}
+
+.dot-danger {
+  background: var(--color-accent-dark);
+}
+
+/* ---------- Toggle ---------- */
+.toggleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.toggleText {
+  display: grid;
+  gap: 0.15rem;
+  cursor: pointer;
+}
+
+.toggleLabel {
+  color: var(--color-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.toggleDescription {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+.toggle {
+  position: relative;
+  width: 2.6rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  border: 0;
+  border-radius: var(--radius-pill);
+  padding: 0;
+  background: var(--color-border-strong);
+  transition: background-color 180ms ease;
+}
+
+.knob {
+  position: absolute;
+  top: 0.2rem;
+  left: 0.2rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 20%);
+  transition: transform 180ms ease;
+}
+
+.toggleOn {
+  background: var(--color-primary);
+}
+
+.toggleOn .knob {
+  transform: translateX(1.1rem);
+}
+
+/* ---------- ChipSelect ---------- */
+.chips {
+  gap: 0.6rem;
+}
+
+.chipSm {
+  min-height: 2.15rem !important;
+  padding: 0.35rem 0.8rem !important;
+  font-size: 0.85rem !important;
+}
+
+/* ---------- NumberStepper ---------- */
+.stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 0.35rem;
+  background: var(--color-surface);
+}
+
+.stepperButton {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 0;
+  border-radius: 9px;
+  color: var(--color-heading);
+  background: var(--color-surface-muted);
+}
+
+.stepperButton:hover:not(:disabled) {
+  background: var(--color-primary-softer);
+}
+
+.stepperButton:disabled {
+  opacity: 0.4;
+}
+
+.stepperButton svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.stepperValue {
+  min-width: 2.75rem;
+  color: var(--color-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* ---------- RangeSlider ---------- */
+.range {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.rangeBubbleTrack {
+  position: relative;
+  height: 2rem;
+  margin-inline: 0.7rem;
+}
+
+.rangeBubble {
+  position: absolute;
+  bottom: 0.2rem;
+  border-radius: 7px;
+  padding: 0.2rem 0.55rem;
+  color: #ffffff;
+  background: var(--color-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+:global(:root[data-theme='dark']) .rangeBubble {
+  color: var(--color-bg);
+}
+
+.rangeInput,
+.dualTrack input {
+  width: 100%;
+  height: 1.5rem;
+  margin: 0;
+  background: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+.rangeInput::-webkit-slider-runnable-track {
+  height: 0.4rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--color-primary) var(--fill), var(--color-surface-sunken) var(--fill));
+}
+
+.rangeInput::-moz-range-track {
+  height: 0.4rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--color-primary) var(--fill), var(--color-surface-sunken) var(--fill));
+}
+
+.rangeInput::-webkit-slider-thumb,
+.dualTrack input::-webkit-slider-thumb {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -0.5rem;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: 0 2px 6px rgb(16 32 31 / 20%);
+  appearance: none;
+}
+
+.rangeInput::-moz-range-thumb,
+.dualTrack input::-moz-range-thumb {
+  width: 1rem;
+  height: 1rem;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  background: var(--color-surface);
+}
+
+.rangeMarks,
+.dualLabels {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+}
+
+/* ---------- DualRange ---------- */
+.dual {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.dualTrack {
+  position: relative;
+  height: 1.5rem;
+}
+
+.dualTrack::before {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: 0.3rem;
+  border-radius: var(--radius-pill);
+  content: '';
+  background: linear-gradient(
+    90deg,
+    var(--color-surface-sunken) var(--low),
+    var(--color-primary) var(--low),
+    var(--color-primary) var(--high),
+    var(--color-surface-sunken) var(--high)
+  );
+  transform: translateY(-50%);
+}
+
+.dualTrack input {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.dualTrack input::-webkit-slider-runnable-track {
+  height: 0.3rem;
+  background: transparent;
+}
+
+.dualTrack input::-moz-range-track {
+  background: transparent;
+}
+
+.dualTrack input::-webkit-slider-thumb {
+  margin-top: -0.55rem;
+  pointer-events: auto;
+}
+
+.dualTrack input::-moz-range-thumb {
+  pointer-events: auto;
+}

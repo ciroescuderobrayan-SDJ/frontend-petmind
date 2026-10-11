@@ -1,0 +1,148 @@
+.verified {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  color: var(--color-info);
+}
+
+.verified svg {
+  width: 100%;
+  height: 100%;
+}
+
+.verified.sm {
+  width: 0.95rem;
+  height: 0.95rem;
+}
+
+.verified.md {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.verified.lg {
+  width: 1.4rem;
+  height: 1.4rem;
+}
+
+.sex {
+  display: inline-grid;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+}
+
+.sex svg {
+  width: 62%;
+  height: 62%;
+}
+
+.sex.sm {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.sex.md {
+  width: 1.55rem;
+  height: 1.55rem;
+}
+
+.sex.lg {
+  width: 2rem;
+  height: 2rem;
+}
+
+.female {
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+.male {
+  color: var(--color-info);
+  background: var(--color-info-soft);
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: var(--radius-pill);
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.pill-sm {
+  padding: 0.25rem 0.6rem;
+  font-size: 0.75rem;
+}
+
+.pill-lg {
+  padding: 0.45rem 0.95rem;
+  font-size: 0.95rem;
+}
+
+.dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.pill-warning {
+  color: var(--color-warning-text);
+  background: var(--color-warning-soft);
+}
+
+.pill-warning .dot {
+  background: var(--color-warning-dot);
+}
+
+.pill-success {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.pill-success .dot {
+  background: var(--color-success-dot);
+}
+
+.pill-info {
+  color: var(--color-info-dark);
+  background: var(--color-info-soft);
+}
+
+.pill-info .dot {
+  background: var(--color-info);
+}
+
+.pill-neutral {
+  color: var(--color-text-muted);
+  background: var(--color-surface-sunken);
+}
+
+.pill-neutral .dot {
+  background: var(--color-text-subtle);
+}
+
+.pill-danger {
+  color: var(--color-danger);
+  background: var(--color-danger-soft);
+}
+
+.pill-danger .dot {
+  background: var(--color-accent-dark);
+}
+
+.pill-primary {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.pill-purple {
+  color: var(--color-purple);
+  background: var(--color-purple-soft);
+}

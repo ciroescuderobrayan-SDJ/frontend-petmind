@@ -1,0 +1,64 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--color-primary);
+}
+
+.mark {
+  width: 2.6rem;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.text {
+  display: grid;
+  line-height: 1.05;
+}
+
+.name {
+  font-size: 1.55rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin-top: 0.2rem;
+  color: var(--color-text-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.sm .mark {
+  width: 2.1rem;
+}
+
+.sm .name {
+  font-size: 1.25rem;
+}
+
+.sm .subtitle {
+  font-size: 0.66rem;
+}
+
+.lg .mark {
+  width: 3rem;
+}
+
+.lg .name {
+  font-size: 1.85rem;
+}
+
+.light {
+  color: #ffffff;
+}
+
+.light .subtitle {
+  color: rgb(255 255 255 / 80%);
+}
+
+:global(:root[data-theme='dark']) .mark {
+  --logo-body: #48b8aa;
+  --logo-paw: #0f2422;
+}
