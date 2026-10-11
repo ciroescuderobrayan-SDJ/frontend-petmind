@@ -1,0 +1,12 @@
+.shell {
+  min-height: 100vh;
+  color: var(--color-text);
+  background:
+    radial-gradient(circle at 0% 0%, var(--color-primary-softer) 0, transparent 45%),
+    radial-gradient(circle at 100% 100%, var(--color-accent-softer) 0, transparent 50%),
+    var(--color-bg);
+}
+
+.content {
+  min-height: 100vh;
+}

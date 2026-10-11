@@ -1,0 +1,65 @@
+.shell {
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--color-accent-softer) 0, var(--color-bg) 32rem);
+}
+
+.header {
+  display: flex;
+  min-height: var(--header-height);
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.75rem clamp(1rem, 5.5vw, 5rem);
+  background: var(--color-surface);
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.secure {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: var(--radius-pill);
+  padding: 0.55rem 1rem;
+  color: var(--color-primary);
+  background: var(--color-primary-softer);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.secure svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.exit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.exit:hover {
+  color: var(--color-danger);
+}
+
+.exit svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.content {
+  padding: 2rem clamp(1rem, 4vw, 3rem) 4rem;
+}
+
+@media (max-width: 720px) {
+  .secure {
+    display: none;
+  }
+}
