@@ -1,33 +1,71 @@
+/* Tema oscuro: redefine las variables de styles/global.css. */
 :root[data-theme='dark'] {
   color-scheme: dark;
 
   --color-primary: #48b8aa;
   --color-primary-dark: #75d0c3;
   --color-primary-soft: #183b37;
+  --color-primary-softer: #142c29;
+  --color-on-primary: #062321;
+
   --color-accent: #ff9279;
+  --color-accent-dark: #ffab97;
   --color-accent-soft: #3c2925;
+  --color-accent-softer: #241b18;
+  --color-on-accent: #2a100a;
+
   --color-info: #80b9e4;
+  --color-info-dark: #a8d0f0;
   --color-info-soft: #1e3446;
-  --color-bg: #101918;
-  --color-surface: #182321;
-  --color-surface-muted: #202d2a;
-  --color-border: #34443f;
-  --color-text: #edf5f2;
-  --color-text-muted: #afc0ba;
+
+  --color-warning: #e7b456;
+  --color-warning-dot: #e7b456;
+  --color-warning-text: #f0c87a;
+  --color-warning-soft: #352b18;
+
+  --color-success: #6ac99b;
+  --color-success-dot: #6ac99b;
+  --color-success-soft: #19352a;
+
   --color-danger: #ff8585;
   --color-danger-soft: #3b2525;
-  --color-success: #6ac99b;
+
+  --color-purple: #b8a2e6;
+  --color-purple-soft: #2b2540;
+
+  --color-bg: #101918;
+  --color-bg-panel: #0d1514;
+  --color-surface: #182321;
+  --color-surface-muted: #202d2a;
+  --color-surface-sunken: #1c2826;
+  --color-border: #34443f;
+  --color-border-strong: #44564f;
+
+  --color-heading: #f2f8f6;
+  --color-text: #dce8e4;
+  --color-text-muted: #afc0ba;
+  --color-text-subtle: #7f918b;
+
+  --color-footer-bg: #0a1f1d;
+  --color-footer-surface: #16302d;
+  --color-footer-border: #1d3a37;
+  --color-footer-text: #a9c2bd;
+
+  --gradient-mint: linear-gradient(180deg, #13302c 0%, rgb(16 25 24 / 0%) 100%);
+  --gradient-peach: linear-gradient(180deg, #2a1d19 0%, rgb(16 25 24 / 0%) 100%);
+
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 30%), 0 4px 14px rgb(0 0 0 / 22%);
+  --shadow-md: 0 2px 6px rgb(0 0 0 / 30%), 0 14px 34px rgb(0 0 0 / 30%);
+  --shadow-lg: 0 24px 60px rgb(0 0 0 / 45%);
+  --shadow-primary: 0 8px 18px rgb(0 0 0 / 30%);
+  --shadow-accent: 0 8px 18px rgb(0 0 0 / 30%);
+  --ring: 0 0 0 4px rgb(72 184 170 / 22%);
 }
 
-:root[data-theme='dark'] .site-header {
-  border-bottom-color: var(--color-border);
-  background: rgb(24 35 33 / 92%);
+:root[data-theme='dark'] .page-tint-blue {
+  background-image: linear-gradient(180deg, #172a38 0%, rgb(16 25 24 / 0%) 100%);
 }
 
-:root[data-theme='dark'] .site-footer {
-  color: var(--color-text);
-}
-
-:root[data-theme='dark'] .site-footer p {
-  color: var(--color-text-muted);
+:root[data-theme='dark'] img {
+  filter: saturate(0.95);
 }
