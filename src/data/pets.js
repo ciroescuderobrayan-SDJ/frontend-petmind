@@ -4,7 +4,7 @@ const photo = (name) => `/img/fotos/${name}.jpg`
 
 export const species = ['Perro', 'Gato', 'Otro']
 export const sizes = ['Pequeño', 'Mediano', 'Grande']
-export const petStatuses = ['Disponible', 'En proceso', 'Visita agendada', 'Adoptado', 'Pausado']
+export const petStatuses = ['Borrador', 'Disponible', 'En proceso', 'Visita agendada', 'Adoptado', 'Pausado']
 
 // Estados que se muestran en el listado público de Adoptar.
 export const adoptableStatuses = ['Disponible', 'En proceso', 'Visita agendada']

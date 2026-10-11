@@ -28,7 +28,7 @@ Se actualiza a medida que avanza el trabajo: qué se hizo, cómo está organizad
 | 05 · Historias | 2 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
 | 06 · Institucional y reportes | 4 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
 | 07 · Panel del usuario | 5 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
-| 08 · Panel de la fundación | 6 | ✅ Implementado; revisión visual en navegador pendiente por indisponibilidad de CUA |
+| 08 · Panel de la fundación | 6 | ✅ Detalles completados; lint y build validados; revisión visual manual pendiente |
 
 ## 3. Decisiones (y por qué)
 
@@ -51,6 +51,8 @@ _(Se irán agregando más decisiones abajo a medida que aparezcan.)_
 14. **Secciones 04 a 08:** se añadieron las rutas públicas de fundaciones, historias, contacto, institucional y reportes; las cuentas privadas usan `DashboardLayout` y filtran datos por `user.id` o `user.foundationId`. Los formularios y acciones persisten en los contextos `petmind.v1.*` existentes.
 15. **Sin servicio de backend:** los reportes notifican a las primeras fundaciones verificadas usando distancias de demostración; no hay coordenadas en los datos actuales para calcular cercanía real. El mapa, documentos, certificados, mensajes, invitaciones y pagos se mantienen como demostración local.
 16. **Alcance de los paneles:** se priorizaron acciones funcionales con los esquemas y componentes disponibles; detalles de interacción como gráfica, adjuntos avanzados y drag-and-drop requieren revisión visual y funcional contra los mockups.
+17. **Sección 08, cierre de detalles:** el tablero usa arrastrar/soltar nativo y un selector accesible; la reprogramación modifica la solicitud compartida con el seguimiento de la persona. Las fotos subidas se guardan en el navegador y las campañas siguen siendo una simulación local.
+18. **Datos del gráfico:** `monthlyDonationsByFoundation` y `monthlyDonationCounts` son las series de demostración existentes; el índice final representa el mes actual. Los nombres de meses se calculan hacia atrás desde el mes local para mantener la serie alineada.
 ## 4. Bitácora
 
 _Las entradas van en orden; solo la última tiene hora real._
@@ -65,6 +67,7 @@ _Las entradas van en orden; solo la última tiene hora real._
 - **20:21** — Brayan pidió pausar y pasarle el trabajo a Codex. Estado al pausar: `npm run lint` y `npm run build` pasan (solo el aviso de tamaño del bundle). Se escribió `PROMPT-CODEX.md` con el contexto, las reglas, las APIs y la especificación de cada pantalla pendiente. Cuando Codex termine, Claude audita contra los mockups.
 
 - **21:06** — Codex implementó secciones 04 a 08: directorio y perfil de fundaciones; historias y detalle; nosotros, contacto y reporte con seguimiento; panel de usuario y panel de fundación; rutas privadas/públicas, metadatos `es-CO` y README. `npm run lint` y `npm run build` pasaron; build mantiene el aviso por bundle >500 kB. Se corrigieron imports de `FileDropzone`/`FileChip`, enlaces de notificaciones y variables CSS de los paneles. No se completó la prueba visual: CUA informó que no había navegador configurado y la aprobación de la ventana Chrome agotó el tiempo; Vite arrancó en 5200 porque 5199 ya estaba ocupado. No se hizo ningún cambio de Git. Falta verificar tamaños 1440/390, tema claro/oscuro y flujos interactivos contra los mockups.
+- **21:31** — Se completaron detalles de sección 08 en el panel de la fundación: gráfico anual con selector de periodo y tooltips; resumen con agenda y atención; tabla de mascotas con filtros, selección múltiple y paginación; editor con galería, portada, borradores y vista previa; tablero con filtro por mascota, orden por compatibilidad, tabla y drag-and-drop; detalle con información del hogar, mensajería, notas, historial, reprogramación compartida y decisión de rechazo; campañas con gastos dinámicos, fecha de cierre, soportes y borrador; donaciones aprobadas con total mensual; mensajes, equipo y documentos. Se agregó `Borrador` a los estados de mascota y `updateRequest` al contexto de adopciones. `npm run lint` y `npm run build` pasan; el bundle conserva la advertencia >500 kB. La comprobación visual queda pendiente: el servidor local en 5199 ya respondía, pero el arranque local devuelve `spawn EPERM` y no hay navegador expuesto al control visual en esta sesión. Brayan autorizó commit y push al final de esta tarea.
 
 ## 5. Traspaso
 
