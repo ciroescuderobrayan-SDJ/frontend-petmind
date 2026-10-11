@@ -93,6 +93,21 @@ export function AdoptionsProvider({ children }) {
     }))
   }
 
+  function updateRequest(id, changes) {
+    update(id, (request) => ({
+      ...request,
+      ...changes,
+      ...(changes.interview ? {
+        history: [...(request.history ?? []), {
+          text: 'Entrevista reprogramada',
+          date: new Date().toISOString(),
+          by: changes.interview.with ?? null,
+          stage: request.stage,
+        }],
+      } : {}),
+    }))
+  }
+
   function deleteRequest(id) {
     setRequests((prev) => prev.filter((request) => request.id !== id))
   }
@@ -111,7 +126,7 @@ export function AdoptionsProvider({ children }) {
     }))
   }
 
-  const value = { requests, getRequestById, saveDraft, getDraft, submitRequest, moveRequest, deleteRequest, addMessage, addNote }
+  const value = { requests, getRequestById, saveDraft, getDraft, submitRequest, moveRequest, updateRequest, deleteRequest, addMessage, addNote }
 
   return <AdoptionsContext.Provider value={value}>{children}</AdoptionsContext.Provider>
 }
